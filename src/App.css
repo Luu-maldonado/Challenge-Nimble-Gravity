@@ -1,0 +1,101 @@
+.App {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.App h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(to right, #ffffff, var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.welcome-msg {
+  font-size: 1.2rem;
+  color: var(--text-dim);
+  margin-bottom: 3rem;
+}
+
+.job-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.job-card {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem;
+  /* Increased padding */
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+}
+
+.job-card h3 {
+  margin-bottom: 1rem;
+  color: var(--secondary);
+}
+
+.job-card p {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.apply-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.apply-container input {
+  width: 100%;
+}
+
+.apply-container button {
+  width: 100%;
+}
+
+.notification {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  animation: slideIn 0.3s ease-out;
+  z-index: 1000;
+}
+
+.notification.success {
+  background: #00c853;
+  color: white;
+}
+
+.notification.error {
+  background: #ff5252;
+  color: white;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
