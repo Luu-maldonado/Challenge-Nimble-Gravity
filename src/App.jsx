@@ -47,6 +47,7 @@ function App() {
       uuid: candidate?.uuid,
       jobId: jobId,
       candidateId: candidate?.candidateId,
+      applicationId: candidate?.applicationId,
       repoUrl: repoUrl
     };
 
@@ -57,7 +58,8 @@ function App() {
         body: JSON.stringify(payload)
       });
       const result = await response.json();
-      if (result.ok) {
+
+      if (response.ok) {
         showNotification("Application submitted successfully!");
       } else {
         showNotification(result.message || "Something went wrong", "error");
